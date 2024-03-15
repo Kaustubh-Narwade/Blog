@@ -56,6 +56,11 @@ header nav a:hover {
   background-color: #ddd2c9;
 }
 
+header nav a:active {
+  transition: 200ms;
+  scale: 0.8;
+}
+
 div.post {
   display: grid;
   grid-template-columns: 1fr;

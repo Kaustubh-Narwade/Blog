@@ -25,7 +25,6 @@ mongoose.connect(
 );
 
 app.post("/register", async (req, res) => {
-  console.log("hello");
   const { username, password } = req.body;
   try {
     const userDoc = await User.create({
@@ -33,6 +32,13 @@ app.post("/register", async (req, res) => {
       password: bcrypt.hashSync(password, salt),
     });
     res.json(userDoc);
+    jwt.sign({ username, id: userDoc._id }, secret, {}, (err, token) => {
+      if (err) throw err;
+      res.cookie("token", token).json({
+        id: userDoc._id,
+        username,
+      });
+    });
   } catch (e) {
     res.status(400).json(e);
   }
@@ -40,9 +46,7 @@ app.post("/register", async (req, res) => {
 
 app.post("/login", async (req, res) => {
   const { username, password } = req.body;
-  console.log("1");
   const userDoc = await User.findOne({ username });
-  console.log("2");
 
   const passOk = bcrypt.compareSync(password, userDoc.password);
   if (passOk) {
