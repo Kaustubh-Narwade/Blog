@@ -58,7 +58,7 @@ header nav a:hover {
 
 header nav a:active {
   transition: 200ms;
-  scale: 0.8;
+  scale: 0.85;
 }
 
 div.post {
