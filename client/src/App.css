@@ -34,7 +34,6 @@ header {
 header a {
   text-decoration: none;
   color: inherit;
-  
 }
 
 header a.logo {
@@ -239,11 +238,18 @@ header div.logo1 {
   cursor: pointer;
 }
 
-header div.logo1 img{
+header div.logo1 img {
   border: none;
   height: 35px;
   width: 35px;
   align-items: center;
+}
+
+.editor {
+  padding: 5px 7px;
+  border: 2px solid #ddd;
+  border-radius: 5px;
+  background-color: #fff6f6;
 }
 
 ::-webkit-scrollbar {
