@@ -34,11 +34,13 @@ header {
 header a {
   text-decoration: none;
   color: inherit;
+  
 }
 
 header a.logo {
   font-weight: bold;
   font-size: 1.5rem;
+  align-items: center;
 }
 
 header nav {
@@ -76,6 +78,15 @@ div.post {
 @media screen and (min-width: 700px) {
   div.post {
     grid-template-columns: 0.9fr 1.1fr;
+  }
+}
+@media screen and (max-width: 600px) {
+  header div.logo1 img {
+    height: 25px;
+    width: 25px;
+  }
+  header div.logo1 {
+    gap: 1px;
   }
 }
 
@@ -208,7 +219,7 @@ div.post-page a.edit-btn {
   background-color: #333;
   display: inline-flex;
   align-items: center;
-  gap: 5px;
+  gap: 8px;
   text-decoration: none;
   color: #fff;
   padding: 15px 30px;
@@ -219,6 +230,20 @@ a svg {
   height: 20px;
   /* border: 5px solid #d6ccc2;
   border-radius: 15px; */
+}
+
+header div.logo1 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  cursor: pointer;
+}
+
+header div.logo1 img{
+  border: none;
+  height: 35px;
+  width: 35px;
+  align-items: center;
 }
 
 ::-webkit-scrollbar {

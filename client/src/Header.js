@@ -1,6 +1,9 @@
 import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { UserContext } from "./UserContext";
+import Logo from "./image/bloglogo.png"
+import Logo2 from "./image/blogicon.png"
+
 
 export default function Header() {
   // const [username, setUsername] = useState(null);
@@ -27,9 +30,13 @@ export default function Header() {
 
   return (
     <header>
-      <Link to="/" className="logo">
-        Blogify
-      </Link>
+      <div className="logo1">
+        <img src={Logo} alt="logo"></img>
+        <Link to="/" className="logo">
+          Blogify
+        </Link>
+      </div>
+
       <nav>
         {username && (
           <>
