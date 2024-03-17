@@ -1,6 +1,7 @@
 import { useContext, useState } from "react";
 import { Navigate } from "react-router-dom";
 import { UserContext } from "../UserContext";
+import { BACKEND_URL } from "./Exports";
 
 export default function RegisterPage() {
   const [username, setUsername] = useState("");
@@ -10,7 +11,7 @@ export default function RegisterPage() {
 
   async function register(ev) {
     ev.preventDefault();
-    const response = await fetch("http://localhost:4000/register", {
+    const response = await fetch(`${BACKEND_URL}/register`, {
       method: "POST",
       body: JSON.stringify({ username, password }),
       headers: { "Content-Type": "application/json" },

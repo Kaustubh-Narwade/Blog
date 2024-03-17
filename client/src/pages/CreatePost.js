@@ -2,7 +2,7 @@ import { useState } from "react";
 import "react-quill/dist/quill.snow.css";
 import { Navigate } from "react-router-dom";
 import Editor from "../Editor";
-
+import { BACKEND_URL } from './Exports';
 // const formats = [
 //   "header",
 //   "bold",
@@ -31,7 +31,7 @@ export default function CreatePost() {
     data.set("content", content);
     data.set("file", files[0]);
     ev.preventDefault();
-    const response = await fetch("http://localhost:4000/post", {
+    const response = await fetch({BACKEND_URL}, {
       method: "POST",
       body: data,
       credentials: "include",

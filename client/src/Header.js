@@ -9,7 +9,7 @@ export default function Header() {
   // const [username, setUsername] = useState(null);
   const { userInfo, setUserInfo } = useContext(UserContext);
   useEffect(() => {
-    fetch("http://localhost:4000/profile", {
+    fetch(`https://blogify-server-beta.vercel.app/profile`, {
       credentials: "include",
     }).then((response) => {
       response.json().then((userInfo) => {
@@ -19,7 +19,7 @@ export default function Header() {
   }, []);
 
   function logout() {
-    fetch("http://localhost:4000/logout", {
+    fetch("https://blogify-server-beta.vercel.app/logout", {
       credentials: "include",
       method: "POST",
     });
