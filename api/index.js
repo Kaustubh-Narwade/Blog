@@ -17,7 +17,7 @@ const secret = "wkuge58wrglwhrf87ecwfwcewr7";
 
 const corsOptions = {
   credentials:true, 
-  origin: [""], 
+  origin: ["https://blogify-beryl-chi.vercel.app"], 
   methods: ["POST", "GET", "PUT"]
 }
 app.use(cors(corsOptions));
