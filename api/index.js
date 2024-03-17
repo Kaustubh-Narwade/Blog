@@ -147,6 +147,8 @@ app.get("/post/:id", async (req, res) => {
   res.json(postDoc);
 });
 
-app.listen(4000);
+app.listen(4000, ()=>{
+  console.log(`server 4000 is ready!`)
+})
 // mongodb+srv://blog:pass3qRfLFORiEw8@cluster0.u9hz75p.mongodb.net/?retryWrites=true&w=majority
 // pass3qRfLFORiEw8
